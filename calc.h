@@ -16,7 +16,7 @@ typedef struct ThirdSection ThirdSection;
 typedef struct ThirdSectionList ThirdSectionList;
 typedef struct XyStartList XyStartList;
 typedef struct XyStart XyStart;
-//typedef struct ExludeRegs ExludeRegs;
+//typedef struct ExludeRegs ExludeRegs;//
 enum RegionType{firstType=1,secondType=2,thirdType=3};
 enum ReminderType{fileType=1,partType=2,delType=3,debugType=4,excludeType=5,excelType=6,
 									visualType=7,xyStartType=8};

@@ -1,4 +1,4 @@
-//user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib 
+п»ї//user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib 
 //oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib
 //winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib 
 //odbc32.lib odbccp32.lib 
@@ -131,7 +131,7 @@ void printFirstSection(FILE*f,FirstSectionList*first,Reminders*r)
 				{
 					printDebug(f,i,bb->f1);fprintf(f,"%d\t",bb->f2);fprintf(f,"%d\n",bb->f3);
 				}j++;
-			}else if(debug){sprintf(str,"\tРаздел 1: удалена %d строка\n",bb->f1);CharPrintf(str);}
+			}else if(debug){sprintf(str,"\tР Р°Р·РґРµР» 1: СѓРґР°Р»РµРЅР° %d СЃС‚СЂРѕРєР°\n",bb->f1);CharPrintf(str);}
 		}
 		if(aa->next==NULL)
 		{
@@ -168,7 +168,7 @@ void printSecondSection(FILE*f,SecondSectionList*second,Reminders*r)
 					fprintf(f,"%d\t",bb->s5);fprintf(f,"%d\t",bb->s6);fprintf(f,"%d\n",bb->s7);
 				}
 				j++;
-			}else if(debug){sprintf(str,"\tРаздел 2: удалена %d строка\n",bb->s1);CharPrintf(str);}
+			}else if(debug){sprintf(str,"\tР Р°Р·РґРµР» 2: СѓРґР°Р»РµРЅР° %d СЃС‚СЂРѕРєР°\n",bb->s1);CharPrintf(str);}
 //			}else printf("\tdeleted %d line in 2 part\n",bb->s1);
 		}
 		if(aa->next==NULL)
@@ -201,7 +201,7 @@ void printThirdSection(FILE*f,ThirdSectionList*third,Reminders*r)
 					printDebug(f,j,bb->t1);
 					fprintf(f,"%d\t",bb->t2);fprintf(f,"%d\t",bb->t3);fprintf(f,"%d\n",bb->t4);
 				}j++;
-			}else if(debug){sprintf(str,"\tРаздел 3: удалена %d строка\n",bb->t1);CharPrintf(str);}
+			}else if(debug){sprintf(str,"\tР Р°Р·РґРµР» 3: СѓРґР°Р»РµРЅР° %d СЃС‚СЂРѕРєР°\n",bb->t1);CharPrintf(str);}
 		}
 		if(aa->next==NULL)
 		{
@@ -253,27 +253,27 @@ void printRegions(Goal*g)
 						else printfNullPart(2);
 					if((third=findThirdList(g->regs,bb))!=NULL){printThirdSection(file,third,rem);}
 						else printfNullPart(3);
-						if(fclose(file)){sprintf(str,"Невозможно закрыть %s файл\n",fileName);CharPrintf(str);}
+						if(fclose(file)){sprintf(str,"РќРµРІРѕР·РјРѕР¶РЅРѕ Р·Р°РєСЂС‹С‚СЊ %s С„Р°Р№Р»\n",fileName);CharPrintf(str);}
 					i++;
 				}
-			}if(!trueReg){sprintf(str,"\n\tРегион %d исключён\n",bb->regionNo);CharPrintf(str);excluded++;}
+			}if(!trueReg){sprintf(str,"\n\tР РµРіРёРѕРЅ %d РёСЃРєР»СЋС‡С‘РЅ\n",bb->regionNo);CharPrintf(str);excluded++;}
 		}aa=aa->next;
 		if(aa==NULL&&i>files)
 		{
-			sprintf(str,"\n\n\t********** Количество выданных и заказанных файлов. **********\n");
+			sprintf(str,"\n\n\t********** РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РґР°РЅРЅС‹С… Рё Р·Р°РєР°Р·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ. **********\n");
 			CharPrintf(str);
-			sprintf(str,"\t\tзак\t - выд - искл.\n");CharPrintf(str);
+			sprintf(str,"\t\tР·Р°Рє\t - РІС‹Рґ - РёСЃРєР».\n");CharPrintf(str);
 			printf("\t\t%d\t -  %d  -  %d\n",files,i-1,excluded);
 		}
 	}
 	printf("\n");
 	if(i<files)
 	{
-		sprintf(str,"\n\t********** Количество выданных и заказанных файлов. **********\n");//,files,i-1,files-i+1);
+		sprintf(str,"\n\t********** РљРѕР»РёС‡РµСЃС‚РІРѕ РІС‹РґР°РЅРЅС‹С… Рё Р·Р°РєР°Р·Р°РЅРЅС‹С… С„Р°Р№Р»РѕРІ. **********\n");//,files,i-1,files-i+1);
 		CharPrintf(str);
-		sprintf(str,"\t\tзак\t - выд\n");CharPrintf(str);
+		sprintf(str,"\t\tР·Р°Рє\t - РІС‹Рґ\n");CharPrintf(str);
 		printf("\t\t%d\t -  %d\n",files,i-1);
-		sprintf(str,"\t\tПропущенных регионов: %d\n",excluded);CharPrintf(str);
+		sprintf(str,"\t\tРџСЂРѕРїСѓС‰РµРЅРЅС‹С… СЂРµРіРёРѕРЅРѕРІ: %d\n",excluded);CharPrintf(str);
 	}
 }
 void printReminders(Reminders*rems)
@@ -285,20 +285,20 @@ void printReminders(Reminders*rems)
 		Reminder*bb=aa->reminder;
 		switch((int)bb->type)
 		{
-			case fileType:		sprintf(str,"\tВыходных файлов: %d\n",bb->gen.files);CharPrintf(str);f++;break;
+			case fileType:		sprintf(str,"\tР’С‹С…РѕРґРЅС‹С… С„Р°Р№Р»РѕРІ: %d\n",bb->gen.files);CharPrintf(str);f++;break;
 //			case fileType:		printf("\tFiles = %d\n",bb->gen.files);f++;break;
 			case partType:		printPartList(bb->gen.parts);p++;break;
 			case delType:			printDelList(bb->gen.delList);d++;break;
-			case debugType:	if(bb->gen.debug)sprintf(str,"\tОтладка: да.\n");
-											else sprintf(str,"\tОтладка: нет.\n");
+			case debugType:	if(bb->gen.debug)sprintf(str,"\tРћС‚Р»Р°РґРєР°: РґР°.\n");
+											else sprintf(str,"\tРћС‚Р»Р°РґРєР°: РЅРµС‚.\n");
 											CharPrintf(str);deb++;break;
 			case excludeType:	printExcludeList(bb->gen.exludeRegs);e++;break;
 			default: break;
 		}aa=aa->next;
 	}
-	if(!f){sprintf(str,"\tФайлов для вывода нет.\n");CharPrintf(str);}
+	if(!f){sprintf(str,"\tР¤Р°Р№Р»РѕРІ РґР»СЏ РІС‹РІРѕРґР° РЅРµС‚.\n");CharPrintf(str);}
 	if(!p)printPartList(NULL);if(!d)printDelList(NULL);
-	if(!deb){sprintf(str,"\tВыключить режим отладки.\n");CharPrintf(str);}
+	if(!deb){sprintf(str,"\tР’С‹РєР»СЋС‡РёС‚СЊ СЂРµР¶РёРј РѕС‚Р»Р°РґРєРё.\n");CharPrintf(str);}
 	if(!e)printExcludeList(NULL);
 
 }
@@ -307,12 +307,12 @@ void printExcludeList(DigList*ex)
 	DigList*aa=ex;
 	if(aa!=NULL)
 	{
-		sprintf(str,"\tРегионы для пропуска: %d",aa->dig);aa=aa->next;
+		sprintf(str,"\tР РµРіРёРѕРЅС‹ РґР»СЏ РїСЂРѕРїСѓСЃРєР°: %d",aa->dig);aa=aa->next;
 		CharToOem(str,str);printf("%s",str);
 //		printf("\tRegions to exclude = %d",aa->dig);aa=aa->next;
 		while(aa!=NULL){printf(",%d",aa->dig);aa=aa->next;}printf(";\n");
 	}
-	else {sprintf(str,"\tДля пропуска регионов нет.\n");CharToOem(str,str);printf("%s",str);}
+	else {sprintf(str,"\tР”Р»СЏ РїСЂРѕРїСѓСЃРєР° СЂРµРіРёРѕРЅРѕРІ РЅРµС‚.\n");CharToOem(str,str);printf("%s",str);}
 //	else printf("\tRegions to exclude = 0");
 }
 void printPartList(PartList*parts)
@@ -323,7 +323,7 @@ void printPartList(PartList*parts)
 		int i=1;
 		for(i;i<4;i++)
 		{
-			sprintf(str,"\tРаздел %d:\tвыводимых строк нет\n",i);
+			sprintf(str,"\tР Р°Р·РґРµР» %d:\tРІС‹РІРѕРґРёРјС‹С… СЃС‚СЂРѕРє РЅРµС‚\n",i);
 			CharToOem(str,str);printf("%s",str);
 		}
 		//printf("\tPart %d\tlines = 0\n",i);
@@ -331,9 +331,9 @@ void printPartList(PartList*parts)
 	else while(aa!=NULL)
 	{
 		Part*bb=aa->part;
-		sprintf(str,"\tРаздел %d:\tвыводится ",bb->partNo);CharPrintf(str);
-		if(bb->lines==1)sprintf(str,"%d строка.\n",bb->lines);
-		else sprintf(str,"%d строк.\n",bb->lines);
+		sprintf(str,"\tР Р°Р·РґРµР» %d:\tРІС‹РІРѕРґРёС‚СЃСЏ ",bb->partNo);CharPrintf(str);
+		if(bb->lines==1)sprintf(str,"%d СЃС‚СЂРѕРєР°.\n",bb->lines);
+		else sprintf(str,"%d СЃС‚СЂРѕРє.\n",bb->lines);
 		CharPrintf(str);
 		aa=aa->next;
 	}
@@ -346,7 +346,7 @@ void printDelList(DelList*delList)
 	{
 		for(n;n<3;n++)
 		{
-			sprintf(str,"\tРаздел %d: строки не удаляются\n",n+1);CharToOem(str,str);printf("%s",str);
+			sprintf(str,"\tР Р°Р·РґРµР» %d: СЃС‚СЂРѕРєРё РЅРµ СѓРґР°Р»СЏСЋС‚СЃСЏ\n",n+1);CharToOem(str,str);printf("%s",str);
 		}
 	}
 //	{for(n;n<3;n++)printf("\tIn part %d would be deleted\t0 lines\n",n+1);}
@@ -354,13 +354,13 @@ void printDelList(DelList*delList)
 	{
 		DelPart*bb=aa->del;
 		DigList*cc=bb->lines;
-		sprintf(str,"\tРаздел %d: ",bb->regNo);CharPrintf(str);
-		if(cc->next==NULL){sprintf(str,"будет удалена %d строка.\n",cc->dig);CharPrintf(str);}
+		sprintf(str,"\tР Р°Р·РґРµР» %d: ",bb->regNo);CharPrintf(str);
+		if(cc->next==NULL){sprintf(str,"Р±СѓРґРµС‚ СѓРґР°Р»РµРЅР° %d СЃС‚СЂРѕРєР°.\n",cc->dig);CharPrintf(str);}
 		else
 		{
-			sprintf(str,"будут удалены\t%d",cc->dig);CharPrintf(str);
+			sprintf(str,"Р±СѓРґСѓС‚ СѓРґР°Р»РµРЅС‹\t%d",cc->dig);CharPrintf(str);
 			cc=cc->next;while(cc!=NULL){printf(",%d",cc->dig);cc=cc->next;}
-			sprintf(str,"\tстроки.\n");CharPrintf(str);
+			sprintf(str,"\tСЃС‚СЂРѕРєРё.\n");CharPrintf(str);
 		}
 		aa=aa->next;
 	}
@@ -374,13 +374,13 @@ int createDir(char*d)
 		if(errno!=17)perror(d);
 		if(_chdir(d))
 		{
-			sprintf(str,"Невозможно перейти в каталог %s.\n",d);
+			sprintf(str,"РќРµРІРѕР·РјРѕР¶РЅРѕ РїРµСЂРµР№С‚Рё РІ РєР°С‚Р°Р»РѕРі %s.\n",d);
 			fprintf(stderr,str);exit(0);
 		}
 //		if(_chdir(d)){fprintf(stderr,"Could not go into dir %s.\n",d);exit(0);}
     if((hFile=_findfirst( "*.*",&c_file))==-1L)
 		{
-			sprintf(str,"Нет таких фалов: *.*");perror(str);
+			sprintf(str,"РќРµС‚ С‚Р°РєРёС… С„Р°Р»РѕРІ: *.*");perror(str);
 		}
     else
 		{
@@ -392,14 +392,14 @@ int createDir(char*d)
 						c_file.attrib&_A_ARCH)
 					if(_chmod(c_file.name,_S_IWRITE))
 					{
-						sprintf(str,"Невозможно сменить режим доступа к файлу.");perror(str);
+						sprintf(str,"РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРјРµРЅРёС‚СЊ СЂРµР¶РёРј РґРѕСЃС‚СѓРїР° Рє С„Р°Р№Р»Сѓ.");perror(str);
 					}
 					if(remove(c_file.name))perror(c_file.name);
 				}
 			}
 			_findclose(hFile);
 		}
-		if(_chdir("..")){sprintf(str,"Невозможно перейти в .. каталог\n");perror(str);exit(0);}
+		if(_chdir("..")){sprintf(str,"РќРµРІРѕР·РјРѕР¶РЅРѕ РїРµСЂРµР№С‚Рё РІ .. РєР°С‚Р°Р»РѕРі\n");perror(str);exit(0);}
 	}return 1;
 }
 void printDebug(FILE*f,int a,int b)
@@ -419,13 +419,13 @@ void printfEmpty(int line,int partNo)
 {
 	if(debug)
 	{
-		sprintf(str,"\tРаздел %d: добавлена пустая %d строка\n",partNo,line);// AnsiToOem
+		sprintf(str,"\tР Р°Р·РґРµР» %d: РґРѕР±Р°РІР»РµРЅР° РїСѓСЃС‚Р°СЏ %d СЃС‚СЂРѕРєР°\n",partNo,line);// AnsiToOem
 		CharToOem(str,str);printf("%s",str);
 	}
 }
 void printfLineMore(int partNo,int j,int order)
 {
-	sprintf(str,"\tРаздел %d: строк должно быть больше заказанного (%d - %d = %d)\n",partNo,j-1,order,j-1-order);
+	sprintf(str,"\tР Р°Р·РґРµР» %d: СЃС‚СЂРѕРє РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ Р·Р°РєР°Р·Р°РЅРЅРѕРіРѕ (%d - %d = %d)\n",partNo,j-1,order,j-1-order);
 	CharToOem(str,str);printf("%s",str);
 }
 void printfPartEnd(FILE*f)
@@ -438,7 +438,7 @@ void printfPartEnd(FILE*f)
 }
 void printfNullPart(int d)
 {
-	sprintf(str,"\t\t********   Пустой %d раздел.   *********\n",d);
+	sprintf(str,"\t\t********   РџСѓСЃС‚РѕР№ %d СЂР°Р·РґРµР».   *********\n",d);
 	CharToOem(str,str);printf("%s",str);
 }
 //_com_dispatch_method
